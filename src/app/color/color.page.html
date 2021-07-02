@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      {{smartLight.alias}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="center">
+          <ion-img id="light" [ngStyle]="{'background-color': color}" [src]="lightImg"></ion-img>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="center">
+          <ion-button fill="clear" class="switch" (click)="changeChannel0()">
+            <ion-icon slot="icon-only" name="power-outline">
+            </ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-card>
+
+  <ion-list>
+    <ion-item lines="none">
+      <ion-range id="bright" [(ngModel)]="smartLightStatus.brightness" pin="true" min="1" max="255" step="1"
+        [debounce]="debounce" (ionChange)="changeBrightness()">
+        <ion-icon slot="start" size="small" name="sunny-outline"></ion-icon>
+      </ion-range>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-range id="cct" [(ngModel)]="smartLightStatus.colorTemperature" pin="true" min="1" max="500" step="1"
+        [debounce]="debounce" class="ion-range" (ionChange)="changeColorTemperature()">
+        <ion-icon slot="start" size="small" name="thermometer-outline"></ion-icon>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,17 @@
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#light{
+    background-color: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    width: 240px;
+    height: 240px;
+}
+
+#cct.ion-range{
+    --bar-background-active: transparent;
+    --bar-background: linear-gradient(to right,#FFF9FB, #FFA957);
+    --bar-height: 30px;
+}
